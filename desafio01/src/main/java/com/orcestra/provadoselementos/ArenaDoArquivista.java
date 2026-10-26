@@ -14,8 +14,23 @@ public class ArenaDoArquivista {
      * 3. Lista vazia devolve "" (string vazia).
      */
     public static String encontrarIngredientePoderoso(List<String> ingredientes) {
-        // TODO: Escreva sua lógica aqui para resolver o enigma e passar nos testes
 
-        return ""; // Apague esta linha quando começar
+        if (ingredientes.isEmpty()) {
+            return "";
+        }
+        String resultado = "";
+
+        for (int i = 0; i < ingredientes.size(); i++) {
+
+            if (ingredientes.get(i).length() > resultado.length()) {
+                resultado = ingredientes.get(i);
+                continue;
+            }
+
+            else if (ingredientes.get(i).length() == resultado.length() && ingredientes.get(i).compareTo(resultado) < 0) {
+                resultado = ingredientes.get(i);
+            }
+        }
+        return resultado;
     }
 }
