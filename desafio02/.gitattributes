@@ -1,0 +1,3 @@
+# Mantém os finais de linha corretos do Maven Wrapper em qualquer sistema
+mvnw text eol=lf
+mvnw.cmd text eol=crlf
